@@ -1,0 +1,31 @@
+<p>
+  country works!
+</p>
+
+<div class="container">
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Search" id="searchString"  name="searchString" [(ngModel)]="searchString" (mouseout)=" search(searchString)">
+      <input type="button" value="Search" (click)="SearchByName(searchString)"/>
+    </div>
+  </div>
+    <br>
+      <h2>countries</h2>
+      <br><br>
+      <table class="table table-hover">
+        <tr>
+          <th>Name</th>
+          <th>capital</th>
+          <th>region</th>
+          <th>flag</th>
+        </tr>
+        <tr *ngFor="let c of countries">
+          
+          <td>{{c.name}}</td>
+          <td>{{c.capital}}</td>
+          <td >{{c.region}}</td>
+          <td> <img src={{c.flag}} style="width :25px"> </td>
+          <td> <a [routerLink]="['country',c]" >Detail</a></td>
+        </tr>
+  </table>
+  </div>

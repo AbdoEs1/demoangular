@@ -1,0 +1,33 @@
+<div class="container">
+<!-- <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)"> -->
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add Product </h3>
+    </div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="product.name">
+      </div>
+      <div class="form-group">
+        <label for="description">Name</label>
+        <input id="description" type="text" class="form-control"
+               name="description" [(ngModel)]="product.description">
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input id="price" type="text" class="form-control"
+               name="price" [(ngModel)]="product.price">
+      </div>
+
+    </div>
+    <div class="panel-footer">
+      <!-- <button class="btn btn-primary" type="submit">Add</button> -->
+      <input type="button" value="Add" (click)="addProduct()" >
+    </div>
+  </div>
+<!-- </form> -->
+</div>
+
+<!-- <span>{{product.name}}</span> -->

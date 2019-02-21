@@ -1,0 +1,27 @@
+<div class="container">
+  <br>
+    <h2>Listes</h2>
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Search" id="searchString"  name="searchString" [(ngModel)]="searchString">
+      </div>
+    </div>
+    <br><br>
+    <table class="table table-hover">
+      <tr>
+        <th (click) ="sortProduct('name')">Name</th>
+        <th (click) ="sortProduct('description')">Description</th>
+        <th (click) ="sortProduct('price')">Price</th>
+        <th>#</th>
+      </tr>
+      <tr *ngFor="let p of search(searchString) " class={{p.price|colorPipe}} >
+        
+        <td>{{p.name}}</td>
+        <td>{{p.description}}</td>
+        <td >{{p.price}}</td>
+
+        <td appColorPrice price={{p.price}} > {{p.price}}  </td>  
+        
+      </tr>
+</table>
+</div>
